@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://nfxbcrmt5nqx"]
+[gd_scene load_steps=13 format=3 uid="uid://nfxbcrmt5nqx"]
 
 [ext_resource type="Texture2D" uid="uid://bnpp3dq8ta4xb" path="res://Assets/ranass/!Assets.png" id="1_7fkqo"]
+[ext_resource type="Script" uid="uid://cnqfxasaoj71k" path="res://point.gd" id="1_q733i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q733i"]
 atlas = ExtResource("1_7fkqo")
@@ -70,12 +71,13 @@ animations = [{
 radius = 12.0415945
 
 [node name="point" type="Area2D"]
+script = ExtResource("1_q733i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.0234375, 0.023437498)
 sprite_frames = SubResource("SpriteFrames_7w8km")
 autoplay = "default"
-frame_progress = 0.91009223
+frame_progress = 0.0056636008
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
