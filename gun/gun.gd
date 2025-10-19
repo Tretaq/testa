@@ -10,6 +10,7 @@ func _process(delta: float) -> void:
         scale.y = -1
     else:
         scale.y = 1
+    ammo = Global.ammo
     if Input.is_action_just_pressed("fire") and ammo > 0:
             ammo -= 1
             Global.ammo = ammo

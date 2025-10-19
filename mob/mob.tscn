@@ -145,7 +145,6 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_ub8vd")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
