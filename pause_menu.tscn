@@ -113,7 +113,13 @@ text = "Resume
 
 [node name="Howtoplay" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "How to play?"
+text = "All u have to do is kill 
+zombies that are trying to
+ take over ur signal port. maybe u already know but 
+u need ammo to do it.
+wsad to move 
+left click to shot 
+defend the signal untill ur last breath"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2

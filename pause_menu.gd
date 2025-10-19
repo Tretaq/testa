@@ -20,9 +20,10 @@ func _on_resume_pressed() -> void:
 
 
 func _on_restart_pressed() -> void:
+    Global.reset()
     resume()
     get_tree().reload_current_scene()
     
-
+    
 func _process(delta):
     testEsc()

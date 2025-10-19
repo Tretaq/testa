@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://jhospea73sb0"]
+[gd_scene load_steps=32 format=4 uid="uid://jhospea73sb0"]
 
 [ext_resource type="PackedScene" uid="uid://cmwbgbdwf2a3y" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://dutbgtln6dha1" path="res://game.gd" id="1_j5wjh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://56k6jd5ei1j8" path="res://mob/mob_spawner.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bv6rx1gqmv2ia" path="res://kus.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bx8gb3oyj3mtt" path="res://pause_menu.tscn" id="9_vef74"]
+[ext_resource type="FontFile" uid="uid://b7ccie6gdm621" path="res://Assets/ranass/PixelOperator8.ttf" id="10_hve3p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_feb5d"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -469,6 +470,7 @@ position = Vector2(90.5, 260)
 shape = SubResource("RectangleShape2D_j5wjh")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -478,5 +480,16 @@ offset_left = 473.0
 offset_top = 245.0
 offset_right = -344.77783
 offset_bottom = -215.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 81.0
+offset_right = 158.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_hve3p")
+theme_override_font_sizes/font_size = 8
+text = "press esc 
+for instructions"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
