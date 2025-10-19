@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=4 uid="uid://jhospea73sb0"]
+[gd_scene load_steps=23 format=4 uid="uid://jhospea73sb0"]
 
 [ext_resource type="PackedScene" uid="uid://cmwbgbdwf2a3y" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://copwht617xe6i" path="res://Assets/Monochrome/Tilemap/tilemap.png" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://dcavkiv18iarn" path="res://mob/mob.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://nfxbcrmt5nqx" path="res://point.tscn" id="3_feb5d"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_feb5d"]
@@ -392,3 +393,7 @@ zoom = Vector2(3, 3)
 
 [node name="point" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(6, 71)
+
+[node name="mob" parent="." node_paths=PackedStringArray("point") instance=ExtResource("2_fc0e3")]
+position = Vector2(-81, 273)
+point = NodePath("../point")

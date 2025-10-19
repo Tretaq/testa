@@ -40,6 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ub8vd"]
+radius = 7.0
 
 [node name="mob" type="CharacterBody2D"]
 collision_layer = 2
@@ -49,13 +50,14 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_6jlfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -16)
+position = Vector2(1, -10)
+scale = Vector2(0.5625, 0.56250006)
 sprite_frames = SubResource("SpriteFrames_vcc1q")
 autoplay = "default"
-frame_progress = 0.98668885
+frame_progress = 0.03275037
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_ub8vd")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -63,3 +65,5 @@ debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

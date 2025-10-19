@@ -48,13 +48,19 @@ script = ExtResource("1_6wip1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3udht")
 autoplay = "default"
-frame_progress = 0.07461475
+frame_progress = 0.25320047
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-rect = Rect2(-82, -82, 164, 164)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3, 2)
+collision_layer = 0
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6wip1")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-1, -1)
+rect = Rect2(-82, -82, 164, 164)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
