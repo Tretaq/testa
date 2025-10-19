@@ -8,27 +8,27 @@ const SPEED = 10
 var is_dead: bool = false # Flag to disable movement when dead
 
 func _physics_process(delta: float):
-    if is_dead:
-        velocity = Vector2.ZERO # Ensure the mob doesn't move
-        return
+	if is_dead:
+		velocity = Vector2.ZERO # Ensure the mob doesn't move
+		return
 
-    var dir = to_local(nav_agent.get_next_path_position()).normalized()
-    velocity = dir * SPEED
-    move_and_slide()
+	var dir = to_local(nav_agent.get_next_path_position()).normalized()
+	velocity = dir * SPEED
+	move_and_slide()
 
 func makepath() -> void:
-    nav_agent.target_position = point.global_position
+	nav_agent.target_position = point.global_position
 
 func _on_timer_timeout() -> void:
-    makepath()
+	makepath()
 
 func take_damage():
-    if is_dead:
-        return
+	if is_dead:
+		return
 
-    is_dead = true
-    velocity = Vector2.ZERO
-    animated_sprite.play("die")
+	is_dead = true
+	velocity = Vector2.ZERO
+	animated_sprite.play("die")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-    queue_free()
+	queue_free()
