@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dcavkiv18iarn" path="res://mob/mob.tscn" id="2_48w23"]
 
 [node name="mob_spawner" type="Node2D"]
-position = Vector2(-1, -2)
 script = ExtResource("1_fbqtq")
 enemy_prefab = ExtResource("2_48w23")
 
