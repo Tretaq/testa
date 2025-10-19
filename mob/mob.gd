@@ -5,12 +5,11 @@ const SPEED = 10
 @export var point: Area2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-var is_dead: bool = false # Flag to disable movement when dead
+var is_dead: bool = false
 
 func _physics_process(delta: float):
 	if is_dead:
-		velocity = Vector2.ZERO # Ensure the mob doesn't move
-		return
+		velocity = Vector2.ZERO
 
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * SPEED
