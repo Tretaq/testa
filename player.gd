@@ -10,6 +10,7 @@ const FRICTION: int = 1000
  
  
 func _process(delta: float) -> void:
+	$Label.text = str(Global.ammo)
 	if get_global_mouse_position().x < global_position.x:
 		sprite.flip_h = true
 	else:

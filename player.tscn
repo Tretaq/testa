@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://cmwbgbdwf2a3y"]
+[gd_scene load_steps=25 format=3 uid="uid://cmwbgbdwf2a3y"]
 
 [ext_resource type="Texture2D" uid="uid://cebnt8ojc1rn0" path="res://Assets/playertest/SUNNYSIDE_WORLD_CHARACTERS_PARTS_V0.3.1/IDLE/base_idle_strip9.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cqn1e0iejmnan" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcaygly6o46vi" path="res://Assets/playertest/SUNNYSIDE_WORLD_CHARACTERS_PARTS_V0.3.1/RUN/base_run_strip8.png" id="3_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://cj6lvjhbd4418" path="res://gun/gun.tscn" id="4_hqtel"]
+[ext_resource type="FontFile" uid="uid://b7ccie6gdm621" path="res://Assets/ranass/PixelOperator8.ttf" id="5_sweqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -142,6 +143,7 @@ radius = 5.729431
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -160,3 +162,13 @@ shape = SubResource("CircleShape2D_ivps1")
 
 [node name="Gun" parent="." instance=ExtResource("4_hqtel")]
 position = Vector2(2, -4)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -13.0
+offset_top = -24.0
+offset_right = 27.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+theme_override_fonts/font = ExtResource("5_sweqy")
+theme_override_font_sizes/font_size = 8

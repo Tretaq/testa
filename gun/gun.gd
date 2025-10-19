@@ -1,5 +1,5 @@
 extends Node2D
-var ammo = 3
+var ammo = Global.ammo
 const BULLET = preload("res://bullet/bullet.tscn")
 @onready var muzzle: Marker2D = $Marker2D
 func _process(delta: float) -> void:
@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
         scale.y = 1
     if Input.is_action_just_pressed("fire") and ammo > 0:
             ammo -= 1
-            print(ammo)
+            Global.ammo = ammo
+            print(Global.ammo)
             var bullet_instance = BULLET.instantiate()
             get_tree().root.add_child(bullet_instance)
             bullet_instance.global_position = muzzle.global_position
