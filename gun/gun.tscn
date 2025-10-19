@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj6lvjhbd4418"]
+
+[ext_resource type="Texture2D" uid="uid://bn33vdegibo5k" path="res://Assets/ranass/Shotgun.png" id="1_1vrot"]
+
+[node name="Gun" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8.000002, -1)
+scale = Vector2(0.56250006, 0.5625)
+texture = ExtResource("1_1vrot")
