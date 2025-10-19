@@ -138,10 +138,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivps1"]
-radius = 9.055386
+radius = 5.729431
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(145, 85)
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -159,4 +158,4 @@ scale = Vector2(0.5236112, 0.5236112)
 shape = SubResource("CircleShape2D_ivps1")
 
 [node name="Gun" parent="." instance=ExtResource("4_hqtel")]
-position = Vector2(5, -4)
+position = Vector2(2, -4)

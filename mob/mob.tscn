@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcavkiv18iarn"]
+
+[ext_resource type="Script" uid="uid://dsft63w58e2gy" path="res://mob/mob.gd" id="1_6jlfs"]
+[ext_resource type="Texture2D" uid="uid://bvyqdkn28o35u" path="res://Assets/ranass/ZombieToast(1).png" id="1_7b8ug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jlfs"]
+atlas = ExtResource("1_7b8ug")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pirjb"]
+atlas = ExtResource("1_7b8ug")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mixeo"]
+atlas = ExtResource("1_7b8ug")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkfaf"]
+atlas = ExtResource("1_7b8ug")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcc1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jlfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pirjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mixeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkfaf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ub8vd"]
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_6jlfs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_vcc1q")
+autoplay = "default"
+frame_progress = 0.98668885
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ub8vd")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

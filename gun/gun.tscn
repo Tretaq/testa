@@ -4,10 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bn33vdegibo5k" path="res://Assets/ranass/Shotgun.png" id="1_1vrot"]
 
 [node name="Gun" type="Node2D"]
-position = Vector2(-1, 0)
 script = ExtResource("1_0qvfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(6.0000005, -2.1175824e-22)
 scale = Vector2(0.37499994, 0.3749999)
 texture = ExtResource("1_1vrot")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(15, -1)
