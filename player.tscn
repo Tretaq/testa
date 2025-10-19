@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmwbgbdwf2a3y"]
+[gd_scene load_steps=24 format=3 uid="uid://cmwbgbdwf2a3y"]
 
 [ext_resource type="Texture2D" uid="uid://cebnt8ojc1rn0" path="res://Assets/playertest/SUNNYSIDE_WORLD_CHARACTERS_PARTS_V0.3.1/IDLE/base_idle_strip9.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cqn1e0iejmnan" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcaygly6o46vi" path="res://Assets/playertest/SUNNYSIDE_WORLD_CHARACTERS_PARTS_V0.3.1/RUN/base_run_strip8.png" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://cj6lvjhbd4418" path="res://gun/gun.tscn" id="4_hqtel"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -156,3 +157,6 @@ frame_progress = 0.96065444
 position = Vector2(1, -5)
 scale = Vector2(0.5236112, 0.5236112)
 shape = SubResource("CircleShape2D_ivps1")
+
+[node name="Gun" parent="." instance=ExtResource("4_hqtel")]
+position = Vector2(5, -4)
